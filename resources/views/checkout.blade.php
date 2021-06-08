@@ -10,6 +10,8 @@
         <div class="col-sm-8">
             <h1 class="text-center mb-4">Abonnements</h1>
 
+            @if ($plans->count())
+
             <form method="post" id="payment-form">
                 @csrf
 
@@ -35,6 +37,12 @@
                   
                   <button type="submit" class="btn btn-primary" id="card-button" data-secret="{{ $intent->client_secret }}">Payer maintenant</button>
                 </form>
+
+                @else
+
+                <p>Aucun abonnement disponible.</p>
+
+                @endif
         </div>
     </div>
 </div>
