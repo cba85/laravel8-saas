@@ -11,8 +11,9 @@ class CheckoutController extends Controller
     {
         $plans = Plan::get();
         $intent = $request->user()->createSetupIntent();
+        $stripeKey = env('STRIPE_KEY');
 
-        return view('checkout', compact('plans', 'intent'));
+        return view('checkout', compact('plans', 'intent', 'stripeKey'));
     }
 
     public function store(Request $request)

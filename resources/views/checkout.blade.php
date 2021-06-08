@@ -31,7 +31,7 @@
 
                   <div id="card-element" class="mt-4"></div>
 
-                <div style="color: red;" id="card-errors" role="alert" class="mb-4"></div>
+                <div class="text-danger" id="card-errors" role="alert" class="mb-4"></div>
                   
                   <button type="submit" class="btn btn-primary" id="card-button" data-secret="{{ $intent->client_secret }}">Payer maintenant</button>
                 </form>
@@ -40,7 +40,7 @@
 </div>
 
 <script>
-    const stripe = Stripe('pk_test_51INyfxC92VjAODHf5GD7HzZFPVApkkrdtW0XlrIsUjqzt84crKX1LNBlw8STsj1oUEAycjqpdNNIwRPMWbm4qFLZ00v00Lw1qD');
+    const stripe = Stripe('{{ $stripeKey }}');
     const elements = stripe.elements();
 
     const card = elements.create("card");
