@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <a href="{{ route('checkout') }}">Go to checkout page</a>
                 </div>
             </div>
         </div>
