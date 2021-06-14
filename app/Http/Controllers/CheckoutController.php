@@ -18,6 +18,19 @@ class CheckoutController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'name' => 'required',
+            'payment_method' => 'required',
+            'plan' => 'required|exists:plans,id'
+        ]);
+
+        $plan = Plan::find($request->plan);
+
+        $request
+            ->user()
+            ->newSubscription('default', $plan->stripe_id)
+            ->create($request->payment_method);
+
+        return view('payments.success');
     }
 }
