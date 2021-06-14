@@ -26,10 +26,16 @@ class CheckoutController extends Controller
 
         $plan = Plan::find($request->plan);
 
-        $request
-            ->user()
-            ->newSubscription('default', $plan->stripe_id)
-            ->create($request->payment_method);
+        try {
+            $subscription = $request
+                ->user()
+                ->newSubscription('default', $plan->stripe_id)
+                ->create($request->payment_method);
+        } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
+            return redirect()->route('cashier.payment', [
+                $e->payment->id, 'redirect' => route('home')
+            ]);
+        }
 
         return view('payments.success');
     }
