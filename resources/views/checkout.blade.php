@@ -35,7 +35,7 @@
 
                 <div class="text-danger" id="card-errors" role="alert" class="mb-4"></div>
                   
-                  <button type="submit" class="btn btn-primary" id="card-button" data-secret="{{ $intent->client_secret }}">Payer maintenant</button>
+                  <button type="submit" class="btn btn-primary mt-4" id="card-button" data-secret="{{ $intent->client_secret }}">Payer maintenant</button>
                 </form>
 
                 @else
@@ -87,7 +87,15 @@ form.addEventListener('submit', async (e) => {
         displayError.textContent = error.message;
     } else {
         displayError.textContent = '';
-        console.log(setupIntent);
+        //console.log(setupIntent);
+        
+        let paymentMethod = document.createElement('input');
+        paymentMethod.setAttribute('type', 'hidden');
+        paymentMethod.setAttribute('name', 'payment_method');
+        paymentMethod.value = setupIntent.payment_method;
+
+        form.appendChild(paymentMethod);
+        form.submit();
     }
 });
 
