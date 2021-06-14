@@ -21,7 +21,8 @@ class CheckoutController extends Controller
         $request->validate([
             'name' => 'required',
             'payment_method' => 'required',
-            'plan' => 'required|exists:plans,id'
+            'plan' => 'required|exists:plans,id',
+            'coupon' => 'nullable'
         ]);
 
         $plan = Plan::find($request->plan);
@@ -30,10 +31,11 @@ class CheckoutController extends Controller
             $subscription = $request
                 ->user()
                 ->newSubscription('default', $plan->stripe_id)
+                ->withCoupon($request->coupon)
                 ->create($request->payment_method);
         } catch (\Laravel\Cashier\Exceptions\IncompletePayment $e) {
             return redirect()->route('cashier.payment', [
-                $e->payment->id, 'redirect' => route('home')
+                $e->payment->id, 'redirect' => route('payments.error')
             ]);
         }
 

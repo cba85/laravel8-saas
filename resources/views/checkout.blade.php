@@ -44,6 +44,11 @@
                   <div id="card-element" class="mt-4"></div>
 
                 <div class="text-danger" id="card-errors" role="alert" class="mb-4"></div>
+
+                 <div class="my-3">
+                    <label for="coupon" class="form-label">Code promo</label>
+                    <input type="text" class="form-control" id="coupon" name="coupon">
+                  </div>
                   
                   <button type="submit" class="btn btn-primary mt-4" id="card-button" data-secret="{{ $intent->client_secret }}">Payer maintenant</button>
                 </form>
