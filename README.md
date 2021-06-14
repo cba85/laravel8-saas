@@ -2,6 +2,8 @@
 
 🚧 Work in progress
 
+Demo: http://laravel-stripy.herokuapp.com/
+
 ## Install
 
 ```bash
