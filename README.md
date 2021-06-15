@@ -13,29 +13,41 @@ Demo: http://laravel-stripy.herokuapp.com/
 
 ## Install
 
+### 1. Install
+
 ```bash
 $ composer install
 $ cp .env.example .env
 $ php artisan key:generate
 ```
 
+### 2. Update your credentials
+
 Add your database, Stripe and Cloudinary credentials into the `.env` file.
+
+### 3. Migrate your database
 
 ```bash
 $ php artisan migrate
 ```
 
+OPTIONAL: adds 10 fake users and 10 fake posts
+
 ```bash
-$ php artisan db:seed # adds 10 fake users and 10 fake posts
+$ php artisan db:seed
 ```
 
-If you prefer to use Laravel public disk storage instead Cloudinary:
+### 4. Store your Stripe products in your database
+
+Manually add your Stripe products in `plans` table, including Stripe Id.
+
+### 5. File storage
+
+OPTIONAL: If you prefer to use Laravel public disk storage instead Cloudinary:
 
 ```bash
 $ php artisan storage:link
 ```
-
-Manually add your Stripe products in `plans` table, including Stripe Id.
 
 ## Usage
 
