@@ -55,7 +55,11 @@
 
                 @else
 
-                <p>Aucun abonnement disponible.</p>
+                <p class="text-center"><em>Aucun abonnement disponible.</em></p>
+
+                <h4>ℹ️ Information</h2>
+
+                <p>Créez des produits dans Stripe et ajouter les dans la table plans de la base de données pour afficher la page de checkout.</p>
 
                 @endif
         </div>
