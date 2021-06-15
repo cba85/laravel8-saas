@@ -20,6 +20,10 @@ Add your database and Stripe credentials inside the `.env` file.
 $ php artisan migrate
 ```
 
+```bash
+$ php artisan db:seed # adds 10 fake users and 10 fake posts
+```
+
 Manually add your Stripe products in `plans` table, including Stripe Id.
 
 ## Usage
@@ -27,3 +31,8 @@ Manually add your Stripe products in `plans` table, including Stripe Id.
 ```bash
 $ php artisan serve
 ```
+
+## Dependencies
+
+- [Laravel UI](https://github.com/laravel/ui) (Bootstrap 4)
+- [Laravel Cashier 12](https://laravel.com/docs/8.x/billing)
