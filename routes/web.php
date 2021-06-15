@@ -20,3 +20,7 @@ Route::group(['middleware' => 'not.subscribed'], function () {
 });
 
 Route::view('/payment/error', 'payments.error')->name('payments.error');
+
+Route::group(['middleware' => ['can:admin']], function () {
+    Route::view('/admin', 'admin.index')->name('admin.index');
+});

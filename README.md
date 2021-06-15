@@ -41,7 +41,9 @@ $ php artisan db:seed
 
 Manually add your Stripe products in `plans` table, including Stripe Id.
 
-### 5. File storage
+### 5. Create a super admin user
+
+### 6. File storage
 
 OPTIONAL: If you prefer to use Laravel public disk storage instead Cloudinary:
 
