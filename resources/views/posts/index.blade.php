@@ -20,7 +20,12 @@
           <p class="card-text mb-auto">{{ $post->body }}</p>
           <a href="#" class="stretched-link">Continue reading</a>
         </div>
-         <img class="col-sm-6" src="{{ asset($post->img) }}" alt="{{ $post->title }}">
+         <img class="col-sm-6" src="{{ asset($post->img_url) }}" alt="{{ $post->title }}">
+         <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+            @csrf
+            {{ method_field('DELETE') }}
+             <button type="submit" class="btn btn-link">👋 Delete</a>
+         </form>
       </div>
       @endforeach
 
