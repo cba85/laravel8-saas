@@ -45,6 +45,7 @@ $ php artisan serve
 
 ## Dependencies
 
+- [Laravel 8](https://laravel.com/)
 - [Laravel UI](https://github.com/laravel/ui) (Bootstrap 4)
 - [Laravel Cashier 12](https://laravel.com/docs/8.x/billing)
 - [Laravel Cloudinary](https://github.com/cloudinary-labs/cloudinary-laravel)
