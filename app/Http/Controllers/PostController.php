@@ -24,10 +24,10 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'img' => 'required'
+            'img' => 'required|image'
         ]);
 
-        $path = $request->img->store('storage');
+        $path = $request->img->store('images');
 
         Post::create([
             'title' => $request->title,
