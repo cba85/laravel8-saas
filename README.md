@@ -43,6 +43,22 @@ Manually add your Stripe products in `plans` table, including Stripe Id.
 
 ### 5. Create a super admin user
 
+```bash
+$ php artisan tinker
+```
+
+```php
+use Spatie\Permission\Models\Permission;
+$permission = Permission::create(['name' => 'admin']);
+
+use Spatie\Permission\Models\Role;
+$role = Role::create(['name' => 'Super Admin']);
+
+$user = User::find(1); // Change 1 by the user id you want to make super admin
+$user->giveRoleTo('Super Admin');
+//$user->givePermissionTo('admin');
+```
+
 ### 6. File storage
 
 OPTIONAL: If you prefer to use Laravel public disk storage instead Cloudinary:
