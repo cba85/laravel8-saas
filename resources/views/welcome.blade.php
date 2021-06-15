@@ -16,10 +16,14 @@
                     <a href="{{ route('login') }}">Log in</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        | <a href="{{ route('register') }}">Register</a>
                     @endif
                 @endauth
         @endif
+
+        | <a href="{{ url('/account') }}">Account</a>
+
+        | <a href="{{ url('/posts') }}">Posts</a>
 
         <p>
             Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})

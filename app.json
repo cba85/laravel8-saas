@@ -1,0 +1,6 @@
+{
+  "name": "Laravel 8 Stripe",
+  "description": "Laravel stripe subscriptions example",
+  "repository": "https://github.com/cba85/teach-laravel-stripe",
+  "keywords": ["laravel", "stripe"]
+}
