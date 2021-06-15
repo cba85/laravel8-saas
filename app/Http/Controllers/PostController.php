@@ -27,12 +27,13 @@ class PostController extends Controller
             'img' => 'required|image'
         ]);
 
-        $path = $request->img->store('images');
+        //$path = $request->img->store('images');
+        $result = $request->img->storeOnCloudinary();
 
         Post::create([
             'title' => $request->title,
             'body' => $request->body,
-            'img' => $path,
+            'img' => $result->getSecurePath(),
             'user_id' => $request->user()->id
         ]);
 
