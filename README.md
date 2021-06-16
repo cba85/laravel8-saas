@@ -73,9 +73,18 @@ $ php artisan storage:link
 $ php artisan serve
 ```
 
+## Features
+
+- Stripe subscription using Laravel Cashier
+- User "super admin" role and permission using Laravel Permission
+- Image upload using Cloudinary
+- API Authentication using Laravel Sanctum 
+- Stripe subscription API
+
 ## Dependencies
 
 - [Laravel 8](https://laravel.com/)
 - [Laravel UI](https://github.com/laravel/ui) (Bootstrap 4)
 - [Laravel Cashier 12](https://laravel.com/docs/8.x/billing)
 - [Laravel Cloudinary](https://github.com/cloudinary-labs/cloudinary-laravel)
+- [Laravel Permission](https://spatie.be/docs/laravel-permission/v4/basic-usage/basic-usage)

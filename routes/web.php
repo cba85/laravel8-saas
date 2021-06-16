@@ -14,7 +14,7 @@ Route::delete('/post/{post}', [App\Http\Controllers\PostController::class, 'dest
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/account', [App\Http\Controllers\AccountController::class, 'index'])->name('account')->middleware('subscribed');
 
-Route::group(['middleware' => 'not.subscribed'], function () {
+Route::group(['middleware' => ['auth', 'not.subscribed']], function () {
     Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
     Route::post('/checkout', [App\Http\Controllers\CheckoutController::class, 'store']);
 });
