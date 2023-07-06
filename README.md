@@ -2,8 +2,6 @@
 
 > For demonstration purpose only
 
-Demo: http://laravel-stripy.herokuapp.com/
-
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Requirements
